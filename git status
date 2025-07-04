@@ -1,0 +1,35 @@
+[33mcommit 00a4d449e6ad47491582ad7ee33300981d213268[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mbranchteste[m[33m, [m[1;31morigin/minha-branch[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/branchteste[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mminha-branch[m[33m, [m[1;32mmain[m[33m)[m
+Author: Eduardo Ribeiro <eduardoribeirovieira2007@gmail.com>
+Date:   Fri Jul 4 20:33:26 2025 -0300
+
+    Remove pastas bin e obj do repositório
+
+[33mcommit 336ffde64d85f573b0b6e4bd6846492079b4a0e5[m
+Author: Eduardo Ribeiro <eduardoribeirovieira2007@gmail.com>
+Date:   Fri Jul 4 20:24:19 2025 -0300
+
+    Erro resolvido
+
+[33mcommit a29fdf7ff90af3a6fa1855fc7955bff7d48d362a[m
+Merge: d44b391 c32c57c
+Author: Eduardo Ribeiro <eduardoribeirovieira2007@gmail.com>
+Date:   Fri Jul 4 19:06:29 2025 -0300
+
+    Merge remoto e local
+    
+    :wq
+    git push origin main
+    exit
+    Merge branch 'main' of https://github.com/poolary/APP-de-Banco-em-C-
+
+[33mcommit d44b3919693d32a6a259a141329213e495ea9b51[m
+Author: Eduardo Ribeiro <eduardoribeirovieira2007@gmail.com>
+Date:   Fri Jul 4 19:03:37 2025 -0300
+
+    First commit
+
+[33mcommit c32c57c1ed38c8a9c68b0e604462c51eb5ede0db[m
+Author: eduardo-dev_rbr <eduardoribeirovieira2007@gmail.com>
+Date:   Fri Jul 4 18:55:44 2025 -0300
+
+    Initial commit
