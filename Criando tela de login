@@ -1,0 +1,44 @@
+using System;
+
+class Teste
+{
+    static void Main(string[] args)
+    {
+        string tan=null, isso=null;
+    login:
+        Console.WriteLine("Bem vindo ao Banco do Cuzin!");
+        Console.WriteLine("Você é novo em nosso banco ou já possui uma conta?");
+        tan = Console.ReadLine();
+        if (tan == "Sou novo")
+        {
+            Console.WriteLine("Por favor, crie uma conta para continuar");
+            Console.WriteLine("Digite o nome do titular da conta: ");
+            string nome = Console.ReadLine();
+            Console.WriteLine("Digite um email para a conta: ");
+            isso = Console.ReadLine();
+        senha: Console.WriteLine("Crie uma senha: ");
+            string Senha = Console.ReadLine();
+            Console.WriteLine("Confirme sua senha: ");
+            string senhaConfirmada = Console.ReadLine();
+            if (senhaConfirmada == Senha) {
+            Console.WriteLine("Conta criada com sucesso!");
+            Console.WriteLine("Seja bem-vindo(a), {0}!", nome); }
+            else
+            {
+                Console.WriteLine("As senhas não coincidem. Tente novamente.");
+                goto senha;
+            }
+        }
+
+        else if (tan == "Tenho conta")
+        {
+            Console.WriteLine("Digite seu email e sua senha para verificação: ");
+            Console.WriteLine("Bem vindo de volta!");
+        }
+        else
+        {
+            Console.WriteLine("Por favor, digite algo válido!");
+            goto login;
+        }
+    }
+}
