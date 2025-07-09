@@ -6,17 +6,82 @@ class Cuzin
 {
     static void Main()
     {
-        string isso;
+        string isso=null!; 
         //double dep;
         double saldo = 500000.00;
         double vlr = 1;
-        string tan;
+        string tan =null!;
+
+        back:
+        Console.WriteLine("Bem vindo ao Banco do Cuzin!");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Deseja criar uma conta ou entrar em uma conta?");
+        Console.WriteLine("Digite 'Criar uma conta' para criar uma nova conta ou 'Entrar' para acessar sua conta existente.");
+        tan = Console.ReadLine()!;
+        if (tan == "Criar uma conta")
+        {
+            Console.Clear();
+            Console.WriteLine("Por favor, crie uma conta para continuar");
+            Console.WriteLine("Digite o nome do titular da conta: ");
+            string nome = Console.ReadLine()!;
+            Console.Clear();
+            Console.WriteLine("Digite um email para a conta: ");
+            isso = Console.ReadLine()!;
+            Console.Clear();
+        senha: Console.WriteLine("Crie uma senha: ");
+            string Senha = Console.ReadLine()!;
+            Console.Clear();
+            Console.WriteLine("Confirme sua senha: ");
+            string senhaConfirmada = Console.ReadLine()!;
+            Console.Clear();
+            if (senhaConfirmada == Senha)
+            {
+                Console.WriteLine("Conta criada com sucesso!");
+                Console.WriteLine("Seja bem-vindo(a), {0}!", nome);
+                Console.Write("Pressione uma tecla para continuar: ");
+                Console.ReadKey();
+                goto inicio;
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("As senhas não coincidem. Tente novamente.");
+                Console.Write("Pressione uma tecla para continuar: ");
+                Console.ReadKey();
+                goto senha;
+            }
+        }
+
+        else if (tan == "Entrar")
+        {
+            Console.Clear();
+            Console.WriteLine("Digite seu email e sua senha para verificação: ");
+            string email = Console.ReadLine()!;
+            string Senha = Console.ReadLine()!;
+            Console.Clear();
+            Console.WriteLine("Confirme sua senha: ");
+            string senhaConfirmada = Console.ReadLine()!;
+            if (email == isso && senhaConfirmada == Senha)
+            {
+                Console.Clear();
+                Console.WriteLine("Bem vindo de volta!");
+                goto inicio;
+            }
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Por favor, digite algo válido!");
+            goto back;
+        }
+   
 
     inicio:
 
-
-        Console.WriteLine("Oque deseja fazer: Depositar | Sacar | Finalizar");
-        isso = Console.ReadLine();
+        Console.Clear();
+        Console.WriteLine("Oque deseja fazer: Depositar | Sacar | Finalizar | Sair da conta");
+        isso = Console.ReadLine()!;
         if (isso == "Depositar")
         {
             // Depositar
@@ -24,19 +89,21 @@ class Cuzin
             Console.WriteLine("Digite o valor que quer adicionar a sua conta: (Saldo atual R${0}) ", saldo);
             vlr = double.Parse(Console.ReadLine()!);
             saldo += vlr;
-            Console.WriteLine(saldo);
+            Console.Clear();
+            Console.WriteLine("Seu saldo atual é de: R${0}", saldo);
         Dep: Console.WriteLine("Deseja adicionar mais?(Yes) or (No)");
-            tan = Console.ReadLine();
+            tan = Console.ReadLine()!;
 
             while (tan == "Yes")
             {
                 Console.Clear();
                 Console.WriteLine("Digite o valor que quer adicionar a sua conta: (Saldo atual R${0}) ", saldo);
-                vlr = double.Parse(Console.ReadLine());
+                vlr = double.Parse(Console.ReadLine()!);
                 saldo += vlr;
-                Console.WriteLine(saldo);
+                Console.Clear();
+                Console.WriteLine("Seu saldo atual é de: R${0}", saldo);
                 Console.WriteLine("Deseja adicionar mais?(Yes) or (No)");
-                tan = Console.ReadLine();
+                tan = Console.ReadLine()!;
             }
             if (tan == "No") { Console.Clear(); goto inicio; }
             else
@@ -52,13 +119,14 @@ class Cuzin
             // Retirada
             Console.Clear();
             Console.WriteLine("Digite o valor que quer retirar de: R${0}", saldo);
-            vlr = double.Parse(Console.ReadLine());
+            vlr = double.Parse(Console.ReadLine()!);
 
             if (vlr <= saldo)
             {
                 // double vaa = saldo - vlr;
                 // double res = vaa;
                 saldo -= vlr;
+                Console.Clear();
                 Console.WriteLine("Valor pego: R${0}", vlr);
                 Console.WriteLine("Saldo restante: R${0}", saldo);
             }
@@ -70,7 +138,7 @@ class Cuzin
             {
             Retir:
                 Console.WriteLine("Deseja fazer mais retiradas?(Yes) or (No)");
-                tan = Console.ReadLine();
+                tan = Console.ReadLine()!;
 
                 if (tan == "Yes")
                 {
@@ -78,13 +146,14 @@ class Cuzin
                     //double res = vaa;
                     // double sub = saldo - vlr;
                     //vaa = sub;
-
+                    Console.Clear();
 
                     Console.WriteLine("Digite o valor que quer retirar de: R${0}", saldo);
-                    vlr = double.Parse(Console.ReadLine());
+                    vlr = double.Parse(Console.ReadLine()!);
                     if (vlr <= saldo)
                     {
                         saldo -= vlr;
+                        Console.Clear();
                         Console.WriteLine("Valor pego: R${0}", vlr);
                         Console.WriteLine("Saldo restante: R${0}", saldo);
                     }
@@ -115,10 +184,18 @@ class Cuzin
         }
         else if (isso == "Finalizar")
         {
-
+            Console.Clear();
             Console.WriteLine("Obrigado pela estadia :)");
             return;
 
+        }else if (isso == "Sair da conta")
+        {
+            Console.Clear();
+            Console.WriteLine("Obrigado por usar o Banco do Cuzin!");
+            Console.WriteLine("Pressione uma tecla para sair...");
+            Console.ReadKey();
+            Console.Clear();
+            goto back;
         }
         else
         {
